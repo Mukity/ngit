@@ -1,0 +1,84 @@
+{% if messg %}
+    <script>
+        alert('{{ messg }}');
+    </script>
+{% endif %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <link rel="stylesheet" href="{%  static 'css/signup.css'%}" type="text/css">
+    <title>Hospital Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ <div id="navbar">
+        <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:5.5vw;">
+            Blood Request Management Application
+ </div>
+ <br><br>
+ <div id="signup">
+     <div id="hospitalsignup">
+        <form action="Hsignup" method="post" name="Hsignup">
+            <label>HOSPITAL SIGN UP</label><br>
+            <label>Hospital E-mail</label><br>
+            <input type="email" name="email" required><br>
+            <label>Password</label><br>
+            <input type="password" name="pass" required><br>
+            <label>Hospital Name</label><br>
+            <input type="text" name="hname"><br>
+            <label>Hospital ID</label><br>
+            <input type="text" name="hid"><br>
+            <label>Contact</label><br>
+            <input type="tel" name="contact"><br>
+            <label>County</label><br>
+            <input type="text" name="county"><br>
+            <label>Sub-County</label><br>
+            <input type="text" name="scounty"><br>
+            <label>Ward</label><br>
+            <input type="text" name="ward"><br>
+            <label>Location Description</label><br>
+            <textarea rows="5" name="location"></textarea><br><br>
+            <button type="submit" name="submit">SUBMIT</button><br>
+            <a href="login">Already have an existing account?</a>
+        </form>
+     </div>
+     <div id="donorsignup">
+        <form action="Signup" method="post" name="Dsignup">
+            <label>DONOR SIGN UP</label><br>
+            <label>Donor E-mail</label><br>
+            <input type="email" name="demail" required><br>
+            <label>Password</label><br>
+            <input type="password" name="dpass" required><br>
+            <label>Full Name</label><br>
+            <input type="text" name="fname" required><br>
+            <label>Blood Group</label><br>
+                <select id="bloodgroups">
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="O+">O+</option>
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O-">O-</option>
+                </select><br>
+            <label>Date of Birth</label><br>
+            <input type="date" name="dob" required><br>
+            <label>Contact</label><br>
+            <input type="tel" name="dcontact" required><br>
+            <label>County</label><br>
+            <input type="text" name="dcounty" required><br>
+            <label>Sub-County</label><br>
+            <input type="text" name="dscounty" required><br>
+            <label>Ward</label><br>
+            <input type="text" name="dward" required><br><br>
+            <button type="submit" name="submit">SUBMIT</button><br>
+            <a href="login">Already have an existing account?</a><br><br>
+        </form>
+     </div>
+ </div>
+<footer>BREMA Copyright &copy2020</footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+body {
+    background-image: url("../images/circulation.jpg");
+    background-size: 100% auto;
+    background-position: center top;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+}
+
+#titlebar {
+    background-color: B22222;
+    color: white;
+    font-size: 3vw;
+}
+#login {
+    font-size: 2vw;
+}
+
+#donorlogin {
+  width: 25rem;
+  padding: 2.5rem;
+  float: left;
+  margin-left: 15%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.625rem;
+  margin-bottom: 5vw;
+}
+
+#hospitallogin {
+  width: 25rem;
+  float: right;
+  margin-right: 15%;
+  padding: 2.5rem;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.625rem;
+}
+
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: B22222;
+    color: white;
+    text-align: center;
+    position: fixed;
+}

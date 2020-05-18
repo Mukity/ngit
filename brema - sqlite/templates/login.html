@@ -1,0 +1,51 @@
+{% if messg %}
+    <script>
+        alert('{{ messg }}');
+    </script>
+{% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+<nav id="titlebar">
+        <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:4vw;">
+        Blood Request Management Application
+</nav>
+<br><br>
+
+<div id="login">
+    <div id="donorlogin">
+        DONOR LOGIN
+        <form action="/donor" method="post" name="dlogin">
+            <b>E-Mail<br></b>
+            <input type="email" name="email" required><br>
+            <b>Password<br></b>
+            <input type="password" name="pass" required><br>
+            <button type="submit" name="submit">SUBMIT</button>
+            <button type="button" onclick="location.href='signup'">Sign Up</button>
+        </form>
+    </div>
+    <br><br>
+
+    <div id="hospitallogin">
+        HOSPITAL LOGIN
+        <form action="/hospital" method="post" name="hlogin">
+            <b>E-Mail<br></b>
+            <input type="email" name="email" required><br>
+            <b>Password<br></b>
+            <input type="password" name="pass" required><br>
+            <button type="submit" name="submit">SUBMIT</button>
+            <button type="button" onclick="location.href='signup'">Sign Up</button>
+        </form>
+    </div>
+</div>
+<footer>BREMA Copyright &copy2020</footer>
+</body>
+</html>

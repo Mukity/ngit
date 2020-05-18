@@ -1,0 +1,32 @@
+{% extends 'donor/base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<form>
+    <h4>Donor Profile</h4>
+    First Name: <input type="text" name="fname" required>
+    Middle Name: <input type="text" name="mname">
+    Surname: <input type="text" name="sname" required>
+    E-mail registered with: <input type="email" name="email" required>
+    Date of Birth: <input type="date" name="dob" required>
+    Blood Group: <select id="bloodgrps" name="bloodgrps">
+                        <option value="A-">A-</option>
+                        <option value="B-">B-</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="B+">B+</option>
+                        <option value="AB+">AB+</option>
+                        <option value="O+">O+</option>
+                </select>
+    Gender: <select id="gender" name="sex">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+</form>
+{% endblock %}

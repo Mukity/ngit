@@ -1,0 +1,75 @@
+{% if messg %}
+    <script>
+        alert('{{ messg }}');
+    </script>
+{% endif %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{%  static 'favicon.ico'%}" type="image/ico">
+    <title>Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">
+        <img src="{% static 'favicon.ico' %}" alt="Logo" style="width:40px;">
+        <span class="navbar-text">
+            BREMA - HOSPITAL
+        </span>
+    </a>
+ </nav>
+ <nav class="navbar navbar-expand-sm bg-dark navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="hospital/donated">Input Blood Donated</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="hospital/used">Input Blood Used</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#postrequest">Post Blood Request</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="hospital/manageRequests">Manage Blood Requests</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="hospital/showDonated">View Blood Donated</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="hospital/showUsed">View Blood Used</a>
+    </li>
+  </ul>
+</nav>
+<label>
+    <p>This is the hospital view where you can work on different hospital functions.</p>
+    <p>The functions that you can work on include:</p>
+    <ol type="a">
+        <li>Posting blood Request</li>
+        <li>Managing the posted requests</li>
+        <li>Inputting blood transfused into the system</li>
+        <li>Inputting blood donated into the system</li>
+        <li>Viewing records of blood donated, blood transfused and blood requests</li>
+    </ol>
+    <p>The tabs above can be used to navigate to the different areas.<br></p>
+    <h3>NOTE: One can post a new request using the form below or via manage blood requests then add.<br></h3>
+</label>
+ <a id="#postrequest"></a>
+<form action="hospital/request_added" method="post" name="postRequest">{% csrf_token %}
+    <label>Post New Blood Request</label>
+    <label>Blood Request ID</label>
+    <input type="text" name="brid" required><br>
+    (NOTE: Blood Request ID should have the first two digits of the hospitalID/date/number_of_request
+    of the hospital in that day e.g. KH/230120/01)
+    <label>Blood Group</label><br>
+    <input type="text" name="bgroup" required><br>
+    <label>Blood Units Needed</label><br>
+    <input type="text" name="brequired" required><br>
+    <label>Hospital Name</label><br>
+    <input type="text" name="hname" required><br>
+    <label>Date</label><br>
+    <input type="date" name="date" required><br>
+    <button type="submit">Submit Request</button><br><br>
+</form>
+</body></html>

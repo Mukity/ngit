@@ -1,0 +1,55 @@
+{% if messg %}
+    <script>
+        alert('{{ messg }}');
+    </script>
+{% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="hospital/request_added" method="post" name="addrequest">
+        Add Blood Request
+        <label>Blood Request ID</label>
+        <input type="text" name="brid" required><br>
+        (NOTE: Blood Request ID should have the first two digits of the hospitalID/date/number_of_request
+        of the hospital in that day e.g. KH/230120/01)
+        <label>Blood Group</label><br>
+        <input type="text" name="bgroup" required><br>
+        <label>Blood Units Needed</label><br>
+        <input type="text" name="brequired" required><br>
+        <label>Hospital Name</label><br>
+        <input type="text" name="hname" required><br>
+        <label>Date</label><br>
+        <input type="date" name="date" required><br>
+        <button type="submit">Submit Request</button><br><br>
+    </form>
+    <form>
+        Delete Blood Request By ID<br>
+        <label> Blood Request ID</label><br>
+        <input type="text" name="delbrid" required><br>
+        <label>Confirm Blood Request ID</label><br>
+        <input type="text" name="cdelbrid" required><br>
+        <button type="submit">Submit Delete Request</button><br><br>
+    </form>
+
+    <form>
+        Edit Blood Request By ID<br>
+        <label>Blood Request</label><br>
+        <input type="text" name="brid"><br>
+        <label>Blood Group</label><br>
+        <input type="text" name="bgroup"><br>
+        <label>Blood Units Needed</label><br>
+        <input type="text" name="brequired"><br>
+        <label>Hospital Name</label><br>
+        <input type="text" name="hname"><br>
+        <label>Date</label><br>
+        <input type="date" name="date"><br>
+        <button type="submit">Submit Request</button><br><br>
+    </form>
+</body>
+</html>
